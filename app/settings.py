@@ -158,7 +158,7 @@ USE_L10N = True
 USE_TZ = True
 
 CORS_ALLOWED_ORIGINS = [
-    'https://job-portal-next.vercel.app/',
+    'https://job-portal-next.vercel.app',
     'http://localhost:3000',
     'http://127.0.0.1:3000'
 ]
