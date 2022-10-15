@@ -1,0 +1,6 @@
+app/.env
+static/
+db.sqlite3
+GDAL-3.4.3-cp38-cp38-win_amd64.whl
+
+
