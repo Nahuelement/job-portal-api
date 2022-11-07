@@ -144,7 +144,7 @@ def applyJob(request, pk):
 
 
     if alreadyApplied:
-        return Response({'error': 'Ya postulase a este trabajo. '}, status=status.HTTP_400_BAD_REQUEST)
+        return Response({'error': 'Ya estas postulando a este trabajo. '}, status=status.HTTP_400_BAD_REQUEST)
 
 
 
