@@ -18,7 +18,7 @@ import dj_database_url
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-# dotenv.read_dotenv()
+dotenv.read_dotenv()
 
 
 
@@ -197,7 +197,7 @@ VIRTUAL_ENV_BASE = os.environ.get('VIRTUAL_ENV')
 
 # print(VIRTUAL_ENV_BASE)
 GDAL_LIBRARY_PATH = os.environ.get('GDAL_LIBRARY_PATH')
-GEOS_LIBRARY_PATH = os.environ.get('GEOS_LIBRARY_PATH')#
+GEOS_LIBRARY_PATH = os.environ.get('GEOS_LIBRARY_PATH')
 # GEOS_LIBRARY_PATH = VIRTUAL_ENV_BASE + '/Lib/site-packages/osgeo/geos_c.dll'
 # GDAL_LIBRARY_PATH = VIRTUAL_ENV_BASE + '/Lib/site-packages/osgeo/gdal304.dll'
 
