@@ -134,7 +134,7 @@ def applyJob(request, pk):
     job = get_object_or_404(Job, id=pk)
 
     if user.userprofile.resume == '':
-        return Response({ 'error': 'Porfavor sube el curriculum primero' }, status=status.HTTP_400_BAD_REQUEST)
+        return Response({ 'error': 'Por favor sube el cv primero' }, status=status.HTTP_400_BAD_REQUEST)
 
     if job.lastDate < timezone.now():
         return Response({ 'error': 'No puedes postular a este trabajo, el tiempo de esta publicacion expiro' }, status=status.HTTP_400_BAD_REQUEST)

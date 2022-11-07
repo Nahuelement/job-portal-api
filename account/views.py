@@ -82,7 +82,7 @@ def uploadResume(request):
      resume = request.FILES['resume']
 
      if resume == '':
-         return Response({ 'error': 'Por favor sube tu CV.' }, status=status.HTTP_400_BAD_REQUEST)
+         return Response({ 'error': 'Por favor carga tu cv.' }, status=status.HTTP_400_BAD_REQUEST)
 
      isValidFile = validate_file_extension(resume.name)
 
