@@ -30,7 +30,7 @@ SECRET_KEY = os.environ.get('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = os.environ.get('DEBUG') == 'True'
 
-ALLOWED_HOSTS = ['https://portal-trabajos.herokuapp.com/','localhost', '127.0.0.1','portal-trabajos.herokuapp.com']
+ALLOWED_HOSTS = ['portal-trabajos.herokuapp.com/','localhost', '127.0.0.1']
 
 
 
@@ -65,7 +65,6 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
-
 
 ROOT_URLCONF = 'app.urls'
 
@@ -197,8 +196,10 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 VIRTUAL_ENV_BASE = os.environ.get('VIRTUAL_ENV')
 
 # print(VIRTUAL_ENV_BASE)
-GDAL_LIBRARY_PATH = os.environ.get('GDAL_LIBRARY_PATH')
-GEOS_LIBRARY_PATH = os.environ.get('GEOS_LIBRARY_PATH')
+#GDAL_LIBRARY_PATH = os.environ.get('GDAL_LIBRARY_PATH')
+#GEOS_LIBRARY_PATH = os.environ.get('GEOS_LIBRARY_PATH')
+GEOS_LIBRARY_PATH = VIRTUAL_ENV_BASE + '/Lib/site-packages/osgeo/geos_c.dll'
+GDAL_LIBRARY_PATH = VIRTUAL_ENV_BASE + '/Lib/site-packages/osgeo/gdal304.dll'
 
 STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
 

@@ -67,7 +67,7 @@ def updateJob(request, pk):
     job = get_object_or_404(Job, id=pk)
 
     if job.user != request.user:
-        return Response({ 'message': 'You can not update this job' }, status=status.HTTP_403_FORBIDDEN)
+        return Response({ 'message': 'No puedes actulizar este trabajo' }, status=status.HTTP_403_FORBIDDEN)
 
     job.title = request.data['title']
     job.description = request.data['description']
@@ -93,11 +93,11 @@ def deleteJob(request, pk):
     job = get_object_or_404(Job, id=pk)
 
     if job.user != request.user:
-        return Response({ 'message': 'You can not delete this job' }, status=status.HTTP_403_FORBIDDEN)
+        return Response({ 'message': 'No puedes eliminar este trabajo' }, status=status.HTTP_403_FORBIDDEN)
 
     job.delete()
 
-    return Response({ 'message': 'Job is Deleted.' }, status=status.HTTP_200_OK)
+    return Response({ 'message': 'Trabajo eliminado.' }, status=status.HTTP_200_OK)
 
 
 @api_view(['GET'])
@@ -107,7 +107,7 @@ def getTopicStats(request, topic):
     jobs = Job.objects.filter(**args)
 
     if len(jobs) == 0:
-        return Response({ 'message': 'Not stats found for {topic}'.format(topic=topic) })
+        return Response({ 'message': 'No existen estadisticas de  {topic}'.format(topic=topic) })
     data = JobSerializer(jobs, many=True)
 
     print(data.data)

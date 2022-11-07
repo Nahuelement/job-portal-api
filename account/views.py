@@ -32,12 +32,12 @@ def register(request):
            )
 
            return Response({
-                'message': 'User registered.'},
+                'message': 'Usuario Registrado.'},
                 status=status.HTTP_200_OK
             )
         else:
             return Response({
-                'error': 'User already exists'},
+                'error': 'Usuario ya existe'},
                 status=status.HTTP_400_BAD_REQUEST
             )
 
@@ -82,12 +82,12 @@ def uploadResume(request):
      resume = request.FILES['resume']
 
      if resume == '':
-         return Response({ 'error': 'Please upload your resume.' }, status=status.HTTP_400_BAD_REQUEST)
+         return Response({ 'error': 'Por favor sube tu CV.' }, status=status.HTTP_400_BAD_REQUEST)
 
      isValidFile = validate_file_extension(resume.name)
 
      if not isValidFile:
-          return Response({ 'error': 'Please upload only pdf file.' }, status=status.HTTP_400_BAD_REQUEST)
+          return Response({ 'error': 'Solo sube archivos en PDF.' }, status=status.HTTP_400_BAD_REQUEST)
 
 
      user.userprofile.resume = resume
