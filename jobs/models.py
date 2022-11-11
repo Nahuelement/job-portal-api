@@ -68,7 +68,7 @@ class Job(models.Model):
         choices=Experience.choices,
         default=Experience.NO_EXPERIENCE
     )
-    salary = models.IntegerField(default=1, validators=[MinValueValidator(1), MaxValueValidator(1000000)])
+    salary = models.IntegerField(default=1, validators=[MinValueValidator(1), MaxValueValidator(10000000)])
     positions = models.IntegerField(default=1)
     company = models.CharField(max_length=100, null=True)
     point = gismodels.PointField(default=Point(0.0, 0.0))
