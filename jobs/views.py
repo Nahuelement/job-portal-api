@@ -15,7 +15,7 @@ from rest_framework.pagination import PageNumberPagination
 
 @api_view(['GET'])
 def getAllJobs(request):
-    filterset = JobsFilter(request.GET, queryset=Job.objects.all().order_by('id'))
+    filterset = JobsFilter(request.GET, queryset=Job.objects.all().order_by('-id'))
 
 
     count = filterset.qs.count()
